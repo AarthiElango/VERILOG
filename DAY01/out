@@ -1,0 +1,110 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x651801862c60 .scope module, "full_addertb" "full_addertb" 2 1;
+ .timescale 0 0;
+v0x651801879d00_0 .var "a", 0 0;
+v0x651801879dc0_0 .var "b", 0 0;
+v0x651801879e90_0 .var "c", 0 0;
+v0x651801879f90_0 .net "carry", 0 0, L_0x65180187a640;  1 drivers
+v0x65180187a060_0 .net "sum", 0 0, L_0x65180187a240;  1 drivers
+S_0x651801862df0 .scope module, "uut" "full_adder" 2 4, 3 1 0, S_0x651801862c60;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "carry";
+L_0x65180187a100 .functor XOR 1, v0x651801879d00_0, v0x651801879dc0_0, C4<0>, C4<0>;
+L_0x65180187a240 .functor XOR 1, L_0x65180187a100, v0x651801879e90_0, C4<0>, C4<0>;
+L_0x65180187a3a0 .functor AND 1, v0x651801879d00_0, v0x651801879dc0_0, C4<1>, C4<1>;
+L_0x65180187a410 .functor AND 1, v0x651801879dc0_0, v0x651801879e90_0, C4<1>, C4<1>;
+L_0x65180187a4b0 .functor AND 1, v0x651801879d00_0, v0x651801879e90_0, C4<1>, C4<1>;
+L_0x65180187a640 .functor OR 1, L_0x65180187a3a0, L_0x65180187a410, L_0x65180187a4b0, C4<0>;
+v0x651801863300_0 .net "a", 0 0, v0x651801879d00_0;  1 drivers
+v0x651801879600_0 .net "b", 0 0, v0x651801879dc0_0;  1 drivers
+v0x6518018796c0_0 .net "c", 0 0, v0x651801879e90_0;  1 drivers
+v0x651801879790_0 .net "c1", 0 0, L_0x65180187a3a0;  1 drivers
+v0x651801879850_0 .net "c2", 0 0, L_0x65180187a410;  1 drivers
+v0x651801879960_0 .net "c3", 0 0, L_0x65180187a4b0;  1 drivers
+v0x651801879a20_0 .net "carry", 0 0, L_0x65180187a640;  alias, 1 drivers
+v0x651801879ae0_0 .net "s1", 0 0, L_0x65180187a100;  1 drivers
+v0x651801879ba0_0 .net "sum", 0 0, L_0x65180187a240;  alias, 1 drivers
+    .scope S_0x651801862c60;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879d00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879dc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879e90_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879d00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879dc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879e90_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879d00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879dc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879e90_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879d00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879dc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879e90_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879d00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879dc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879e90_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879d00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879dc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879e90_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879d00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879dc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x651801879e90_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879d00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879dc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x651801879e90_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x651801862c60;
+T_1 ;
+    %vpi_call 2 23 "$monitor", "time=%0t| a=%b b=%b | sum=%b | carry=%b ", $time, v0x651801879d00_0, v0x651801879dc0_0, v0x65180187a060_0, v0x651801879f90_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "full_addertb.v";
+    "full_adder.v";

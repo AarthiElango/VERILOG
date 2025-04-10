@@ -4,5 +4,5 @@ module adder_4bit (
     output [3:0] sum,
     output cout
 );
-    assign {cout, sum} = a + b + cin;
+    assign {cout, sum} = a + b ;
 endmodule
